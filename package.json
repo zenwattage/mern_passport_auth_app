@@ -1,0 +1,29 @@
+{
+  "name": "project3mernapp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app && cd client && npm run start",
+    "server": "nodemon server.js",
+    "client": "cd client && npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^5.1.0",
+    "cookie-parser": "~1.4.4",
+    "cookie-session": "^1.3.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hbs": "^4.1.0",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.4",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
