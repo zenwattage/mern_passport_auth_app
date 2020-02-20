@@ -33,6 +33,10 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/authentication', usersRouter);
 
+// app.get('/logout', function (req, res) {
+//   req.logout();
+//   res.redirect('/');
+// });
 
 
 app.listen(PORT, () =>

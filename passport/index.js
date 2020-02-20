@@ -11,14 +11,15 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (email, done) {
   User.findOne({ email }).exec((err, user) => {
-      done(err, user); //req.user made available
-    });
+    done(err, user); //req.user made available
+  });
 });
 
 
 //import all stategies
 const SignupStrategy = require('./SignupStrategy');
 const SigninStrategy = require('./SigninStrategy');
+// const SignoutStrategy = require('./SignoutStrategy');
 
 
 passport.use('local-signin', SigninStrategy);

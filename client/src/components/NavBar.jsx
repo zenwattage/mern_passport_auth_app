@@ -38,14 +38,18 @@ function NavBar() {
           Login
         </Link>
       </li>
-      {/* <li className="nav-item">
+      <li className="nav-item">
         <Link
-          to="/search"
-          className={window.location.pathname === "/search" ? "nav-link active" : "nav-link"}
+          to="/logout"
+          className={
+            window.location.pathname === '/logout'
+              ? 'nav-link active'
+              : 'nav-link'
+          }
         >
-          Search
+          Logout
         </Link>
-      </li> */}
+      </li>
     </ul>
   );
 }

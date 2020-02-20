@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Home from './components/Home';
 import NotFound from './components/NotFound';
 import Dashboard from './components/Dashboard';
+import Logout from './components/Logout';
 
 import NavBar from "./components/NavBar";
 
@@ -23,6 +24,7 @@ export default class App extends Component {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
+        <Route path="/logout" component={Logout} />
         <Route path="*" component={NotFound} />
 
       </Router >

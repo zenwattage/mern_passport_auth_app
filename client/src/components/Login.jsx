@@ -1,36 +1,37 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import axios from "axios";
+import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 export default class Login extends Component {
   state = {
-    email: "",
-    password: "",
-    errorMessage: ""
+    email: '',
+    password: '',
+    errorMessage: ''
   };
 
   handleSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
     axios({
-      url: "/authentication/signin",
-      method: "POST",
+      url: '/authentication/signin',
+      method: 'POST',
       data: {
         email,
         password
       }
     })
-    .then(response => {
-      //set user 
-      const isAuthenticated = response.data.isAuthenticated;
-      window.localStorage.setItem('isAuthenticated', isAuthenticated);
-      this.props.history.push("/profile");
-    })
-    .catch(error => {
-      this.setState({
-        errorMessage: error.response.data.message
+      .then(response => {
+        //set user
+        const isAuthenticated = response.data.isAuthenticated;
+
+        window.localStorage.setItem('isAuthenticated', isAuthenticated);
+        this.props.history.push('/profile');
+      })
+      .catch(error => {
+        this.setState({
+          errorMessage: error.response.data.message
+        });
       });
-    });
   };
 
   handleChange = event => {
@@ -39,8 +40,9 @@ export default class Login extends Component {
       [name]: value
     });
   };
+
   render() {
-    const isAuthenticated = window.localStorage.getItem("isAuthenticated");
+    const isAuthenticated = window.localStorage.getItem('isAuthenticated');
 
     if (isAuthenticated) {
       return <Redirect to="/profile" />;
