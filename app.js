@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const passport = require('./passport');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 // process.env.PORT ||
 const log = console.log;
 
@@ -27,6 +27,7 @@ app.use(cookieSession({
 }));
 
 app.use(passport.initialize());
+
 //add coookie to browser
 app.use(passport.session());
 
@@ -37,6 +38,7 @@ app.use('/authentication', usersRouter);
 //   req.logout();
 //   res.redirect('/');
 // });
+
 
 
 app.listen(PORT, () =>

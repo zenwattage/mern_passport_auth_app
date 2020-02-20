@@ -7,11 +7,11 @@ router.get('/', function (req, res, next) {
 });
 
 
-router.get('/logout'), (req, res) => {
-  console.log('inside logout');
+// router.get('/logout'), (req, res) => {
+//   console.log('inside logout');
 
-  req.logout();
-  res.redirect('/');
-};
+//   req.logout();
+//   res.redirect('/');
+// };
 
 module.exports = router;

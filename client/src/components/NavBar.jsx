@@ -26,6 +26,20 @@ function NavBar() {
           Signup
         </Link>
       </li>
+
+      <li className="nav-item">
+        <Link
+          to="/profile"
+          className={
+            window.location.pathname === '/profile'
+              ? 'nav-link active'
+              : 'nav-link'
+          }
+        >
+          Profile
+        </Link>
+      </li>
+
       <li className="nav-item">
         <Link
           to="/login"
@@ -38,6 +52,7 @@ function NavBar() {
           Login
         </Link>
       </li>
+
       <li className="nav-item">
         <Link
           to="/logout"
